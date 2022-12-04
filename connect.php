@@ -2,6 +2,7 @@
   // Connect file
   // Kassovic Management Services, s.r.o.
   // Create connection
+  // github test
 
   $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
   mysqli_query($con,"SET NAMES 'utf8'");
