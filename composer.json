@@ -1,0 +1,7 @@
+{
+    "name": "kassovicms/onyx",
+    "description": "Web PHP framework",
+    "require": {
+        "php": ">=7.0"
+    }
+}
