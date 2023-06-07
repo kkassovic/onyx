@@ -53,7 +53,7 @@ class sqldata {
         endforeach;
 
         //Vráti 1D array ale value
-        return $rowline;
+        if (isset($rowline)) {return $rowline;} else {return 0;}
     }
 
     public function get_sql_onefigure_data($fieldname) 
