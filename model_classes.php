@@ -69,7 +69,7 @@ class sqldata {
         endforeach;
 
         //Vráti iba jednu položku (používať keď sa zisťuje jedna vec - min, max, priemer atd)
-        if (isset($return) {return $figure;} else {return 0;}
+        if (isset($return)) {return $figure;} else {return 0;}
     }
 
 
