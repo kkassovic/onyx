@@ -45,6 +45,8 @@ class sqldata {
         $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         mysqli_query($con,"SET NAMES 'utf8'");
         $data = mysqli_fetch_all(mysqli_query($con,  $this -> sql_query), MYSQLI_ASSOC);
+        
+        if ($data == FALSE) {return 0;}
 
         foreach($data  as &$row):
 
