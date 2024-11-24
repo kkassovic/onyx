@@ -119,4 +119,5 @@ Onyx triedy (model a visual)
     $table = $stmt->fetchAll(\PDO::FETCH_ASSOC);
     $row = $table[0];
     $figure = $table[0]['email'];
+    $conn_pdo = null;
 
