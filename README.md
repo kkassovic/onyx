@@ -92,3 +92,16 @@ Onyx triedy (model a visual)
             oznamtext.removeAttribute('hidden');
         }, false);
     </script>
+
+#New ONYX
+
+## Email wrapper
+
+        $m = new email_wrap();
+        $m->body = $mailmessage;
+        $m->subject = "Pohľadávka č. " . $id;
+        $m->footer = "template/mail_footer.html";
+        $m->config_file = TEMPLATE_DIR . "/mail_config.php";
+        $m->mail_module = "POHLADAVKY_POZNAMKA";
+        $m->autor = $autor_email;
+        $m->send_mail();
