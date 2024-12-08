@@ -6,8 +6,8 @@ function router ($rts, $pt)
     {
         if ($pt == $r[0] OR $pt == $r[0] . "/")
         {
-                require $r[1];
-                return false; //function stop
+            require $_SERVER[ 'DOCUMENT_ROOT'] . "/" . $r[1];
+            return false; //function stop
         }
     }
     if (file_exists ($_SERVER[ 'DOCUMENT_ROOT'] . $pt)) {require $_SERVER[ 'DOCUMENT_ROOT'] . $pt;}
