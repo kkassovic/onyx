@@ -9,6 +9,7 @@ Onyx triedy (model a visual)
     $datatable = $xdata->get_sql_data();
     $rowdata = $xdata->get_sql_row_data();
     $figure = $xdata->get_sql_onefigure_data("sql_field_name");
+    $xdata->save_sql_data(); //UPDATE!
 
 ## Render
 
