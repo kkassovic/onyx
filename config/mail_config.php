@@ -1,4 +1,11 @@
 <?php
+define('E_HOST', 'smtp...');
+define('E_USER', 'postmaster@');
+define('E_PASSWORD', '');
+define('E_PORT', '465');
+define('E_FROM_MAIL', 'postmaster@');
+define('E_FROM_TEXT', 'EP TMV');
+
 $mail->isSMTP();
 //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mail->Host       = E_HOST;
