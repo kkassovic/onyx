@@ -6,7 +6,11 @@ function router ($rts, $pt)
     {
         if ($pt == $r[0] OR $pt == $r[0] . "/")
         {
-            require $_SERVER[ 'DOCUMENT_ROOT'] . "/" . $r[1];
+            if (file_exists ($_SERVER[ 'DOCUMENT_ROOT'] . "/" . $r[1])) {require $_SERVER[ 'DOCUMENT_ROOT'] . "/" . $r[1];}
+            else
+            {
+                echo "ONYX router: " . $_SERVER[ 'DOCUMENT_ROOT'] . "/" . $r[1] . " missing...";
+            }
             return false; //function stop
         }
     }
