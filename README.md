@@ -54,6 +54,19 @@ Onyx triedy (model a visual)
     echo $item->show_input();
     ?>
 
+## View - Text area
+
+    <?php
+    $item = new purecss_form_control();
+    $item->label = "Vyjadrenie technológa";
+    $item->name = "vyjadrenie";
+    $item->required = true;
+    $item->readonly = false;
+    $item->hidden = false;
+    $item->help_block = "Krátky komentár technólga - napr. nápravné opatrenia...";
+    echo $item->show_texta();
+    ?>
+
 ## HTML Form example
 
     <form action="<?php echo $form_action;?>"
@@ -97,15 +110,14 @@ Onyx triedy (model a visual)
 # New ONYX
 
 ## Email wrapper
-
-        $m = new email_wrap();
-        $m->body = $mailmessage;
-        $m->subject = "Pohľadávka č. " . $id;
-        $m->footer = "template/mail_footer.html";
-        $m->config_file = TEMPLATE_DIR . "/mail_config.php";
-        $m->mail_module = "POHLADAVKY_POZNAMKA";
-        $m->autor = $autor_email;
-        $m->send_mail();
+    $m = new email_wrap();
+    $m->body = $mailmessage;
+    $m->subject = "Pohľadávka č. " . $id;
+    $m->footer = "template/mail_footer.html";
+    $m->config_file = TEMPLATE_DIR . "/mail_config.php";
+    $m->mail_module = "POHLADAVKY_POZNAMKA";
+    $m->autor = $autor_email;
+    $m->send_mail();
 
 ## PDO
     $servername = DB_HOST;
