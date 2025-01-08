@@ -134,3 +134,34 @@ Onyx triedy (model a visual)
     $figure = $table[0]['email'];
     $conn_pdo = null;
 
+## Table view
+<table id='datova_tabulka' class='pure-table pure-table-bordered'>
+<thead>
+    <tr>
+        <th>Dátum zmeny</th>
+        <th>Zmena</th>
+        <th>Stroj</th>
+        <th>Parameter</th>
+        <th>Hodnota</th>
+        <th>Tolerancia</th>
+        <th>Zaznamenal</th>
+        <th>Stamp</th>
+    </tr>
+</thead>
+
+<?php foreach ($parametre as $zakaz)
+{
+    echo "<tr>";
+        echo "<td align='left'>" . date("d-M-Y", strtotime($zakaz['datum_zmeny'])) . "</td>";
+        echo "<td align='left'>" . $zakaz['nazov_zmeny'] . "</td>";
+        echo "<td align='left'>" . $zakaz['stroj'] . "</td>";
+        echo "<td align='left'>" . $zakaz['parameter'] . "</td>";
+        echo "<td align='left'>" . $zakaz['hodnota'] . "</td>\n";
+        echo "<td align='left'>" . $zakaz['min_stamp'] . " - " . $zakaz['max_stamp'] . "</td>/";
+        echo "<td align='left'>" . $zakaz['autor'] . "</td>";
+        echo "<td align='left'>" . $zakaz['dat_zaz'] . "</td>";
+    echo "</tr>";
+}
+?>
+
+
