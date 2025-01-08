@@ -135,6 +135,7 @@ Onyx triedy (model a visual)
     $conn_pdo = null;
 
 ## Table view
+```
 <table id='datova_tabulka' class='pure-table pure-table-bordered'>
 <thead>
     <tr>
@@ -163,5 +164,6 @@ Onyx triedy (model a visual)
     echo "</tr>";
 }
 ?>
+```
 
 
