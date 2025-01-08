@@ -8,7 +8,8 @@ Onyx triedy (model a visual)
     $xdata->sql_query = $sql;
     $datatable = $xdata->get_sql_data();
     $rowdata = $xdata->get_sql_row_data();
-    $figure = $xdata->get_sql_onefigure_data("sql_field_name);
+    $figure = $xdata->get_sql_onefigure_data("sql_field_name");
+    $xdata->save_sql_data(); //UPDATE!
 
 ## Render
 
@@ -53,6 +54,19 @@ Onyx triedy (model a visual)
     echo $item->show_input();
     ?>
 
+## View - Text area
+
+    <?php
+    $item = new purecss_form_control();
+    $item->label = "Vyjadrenie technológa";
+    $item->name = "vyjadrenie";
+    $item->required = true;
+    $item->readonly = false;
+    $item->hidden = false;
+    $item->help_block = "Krátky komentár technólga - napr. nápravné opatrenia...";
+    echo $item->show_texta();
+    ?>
+
 ## HTML Form example
 
     <form action="<?php echo $form_action;?>"
@@ -92,3 +106,31 @@ Onyx triedy (model a visual)
             oznamtext.removeAttribute('hidden');
         }, false);
     </script>
+
+# New ONYX
+
+## Email wrapper
+    $m = new email_wrap();
+    $m->body = $mailmessage;
+    $m->subject = "Pohľadávka č. " . $id;
+    $m->footer = "template/mail_footer.html";
+    $m->config_file = TEMPLATE_DIR . "/mail_config.php";
+    $m->mail_module = "POHLADAVKY_POZNAMKA";
+    $m->autor = $autor_email;
+    $m->send_mail();
+
+## PDO
+    $servername = DB_HOST;
+    $database = DB_NAME;
+    $conn_pdo = new PDO("mysql:host=$servername;port=3306;charset=UTF8;dbname=$database", DB_USER, DB_PASSWORD);
+    $conn_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn_pdo->prepare("SELECT email AS email, to_cc_bcc AS to_cc_bcc, trn As trn FROM email_dist WHERE trn = :trn");
+    $mod = "LA_NOVA";
+    $stmt->bindParam(':trn', $mod);
+    $stmt->execute();
+    $row_count = $stmt->rowCount();
+    $table = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    $row = $table[0];
+    $figure = $table[0]['email'];
+    $conn_pdo = null;
+
