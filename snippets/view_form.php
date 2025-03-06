@@ -4,7 +4,7 @@
         id="formular"
 	method="post">
         <fieldset>
-        <legend>Miesto</legend>
+        <legend><i class="material-icons">factory</i>Miesto</legend>
             <?php
                 $item = new purecss_form_control();
                 $item->label = "POS";
