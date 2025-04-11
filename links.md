@@ -13,3 +13,5 @@ https://live.datatables.net/ - Datatables playground
 ## Packages
 https://github.com/peppeocchi/php-cron-scheduler - PHP Cron job scheduler
 
+## Inšpirácie
+https://github.com/anantrp/chat-widget - Chat GPT JS widget
